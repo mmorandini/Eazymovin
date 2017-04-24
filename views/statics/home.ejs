@@ -1,5 +1,31 @@
 <h1>Homepage</h1>
 
+<div class="form-wrap row white-text">
+  <form method="POST" action="/register" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="postcode">Postcode</label>
+        <input type="text" name="postcode" id="postcode">
+      </div>
+      <div class="input-field col s6">
+        <label for="bedrooms">Bedrooms</label>
+        <input type="number" name="surname" id="surname">
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="min-price">Min price</label>
+          <input type="text" name="min-price" id="min-price">
+        </div>
+        <div class="input-field col s6">
+          <label for="max-price">Max price</label>
+          <input type="text" name="max-price" id="max-price">
+        </div>
+      </div>
 
-<input type="text" id="search" value="">
-<button type="button" name="button" id="submit">Submit</button>
+      <div class="input-field col s6">
+        <input type="checkbox" id="living-room"/>
+        <label for="living-room">Living Room required</label>
+      </div>
+    </div>
+  </form>
+</div>
