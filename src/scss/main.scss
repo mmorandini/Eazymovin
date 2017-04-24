@@ -1,4 +1,17 @@
 body {
   font-family: sans-serif;
-  background: red;
+  background: pink;
+  margin: 0 auto;
+  .crop-image{
+    width: 150px;
+  }
+
+}
+main{
+  margin: 0 auto;
+  text-align: center;
+}
+.form-wrap{
+  margin: 0 auto;
+  width: 40%;
 }

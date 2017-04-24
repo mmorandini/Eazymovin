@@ -1,0 +1,35 @@
+<h3>Register</h3>
+
+<% if(locals.message) { %>
+  <p class="white-text"><%= message %></p>
+  <% } %>
+  <div class="form-wrap row white-text">
+    <form method="POST" action="/register" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name">
+        </div>
+        <div class="input-field col s6">
+          <label for="surname">Surname</label>
+          <input type="text" name="surname" id="surname">
+        </div>
+        <div class="input-field col s6">
+          <label for="city">City</label>
+          <input type="text" name="city" id="city">
+        </div>
+        <div class="input-field col s6">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email">
+        </div>
+        <div class="input-field col s6">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+        </div>
+        <div class="input-field col s6">
+          <label for="passwordConfirmation">Password Confirmation</label>
+          <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+        </div>
+      </div>
+      <button class="waves-effect waves-light btn white black-text">Register</button>
+    </form>

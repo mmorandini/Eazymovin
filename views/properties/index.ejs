@@ -1,0 +1,14 @@
+<h1>Properties</h1>
+
+
+<ul>
+  <% properties.forEach(property => { %>
+    <a href="/properties/<%= property._id %>">
+      <img src="<%= property.imageUrl %>" alt="" class="crop-image">
+      <li><%= property.address %></li>
+      <li><%= property.bedrooms %></li>
+      <li><%= property.ppw %></li>
+    </a>
+  <% }); %>
+
+</ul>
