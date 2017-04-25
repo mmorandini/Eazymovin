@@ -23,7 +23,9 @@ function secureRoute(req, res, next) {
 
 router.get('/', (req, res) => res.render('statics/home'));
 
-router.route('/properties').get(properties.index);
+router.route('/properties')
+  .get(properties.index)
+  .post(properties.index);
 router.route('/properties/:id').get(properties.show);
 
 router.route('/register')

@@ -1,18 +1,35 @@
 body {
-  font-family: sans-serif;
-  background: pink;
+  font-family: 'Chewy', cursive;
+  background: white;
   margin: 0 auto;
+  background: powderblue;
+
+  nav{
+    background: white;
+    padding: 5px;
+    a{
+      height: 100%;
+    }
+  }
   .crop-image{
     width: 150px;
   }
-
 }
+.logo{
+  width: 200px;
+  height: 60px
+}
+
 main{
   margin: 0 auto;
   text-align: center;
+
 }
 .form-wrap{
   margin: 0 auto;
   width: 40%;
   font-size: 10px;
+}
+li{
+  list-style-type: none;
 }

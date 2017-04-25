@@ -1,14 +1,16 @@
-<h1>Properties</h1>
+<h3>Properties</h3>
 
-
-<ul>
-  <% properties.forEach(property => { %>
-    <a href="/properties/<%= property._id %>">
-      <img src="<%= property.imageUrl %>" alt="" class="crop-image">
-      <li><%= property.address %></li>
-      <li><%= property.bedrooms %></li>
-      <li><%= property.ppw %></li>
-    </a>
-  <% }); %>
-
-</ul>
+<div class="container">
+  <ul class="row">
+    <% properties.forEach(property => { %>
+      <li class="col-md-3">
+        <a href="/properties/<%= property._id %>">
+        <img src="<%= property.imageUrl %>" alt="" class="crop-image">
+        <li><%= property.address %></li>
+        <li>Bedrooms: <%= property.bedrooms %></li>
+        <li>Price/pw: £<%= property.ppw %></li>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+</div>
