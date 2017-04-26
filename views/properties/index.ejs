@@ -1,16 +1,38 @@
-<h3>Properties</h3>
+<h3>Properties to rent in<span id="postcode"><span></h3>
 
-<div class="container">
-  <ul class="row">
+<div class="container property-container">
+  <a href="/properties/view-map" id="view-btn">Show on map</a>
+  <ul class="row inner-container" style="padding: 20px 0;">
     <% properties.forEach(property => { %>
-      <li class="col-md-3">
-        <a href="/properties/<%= property._id %>">
-        <img src="<%= property.imageUrl %>" alt="" class="crop-image">
-        <li><%= property.address %></li>
-        <li>Bedrooms: <%= property.bedrooms %></li>
-        <li>Price/pw: £<%= property.ppw %></li>
-        </a>
-      </li>
+      <hr>
+      <div class="box">
+        <div class="col-sm-5">
+          <a href="/properties/<%= property._id %>">
+          <% if (!property.imageUrl) {%>
+            <img src="../images/default.png" alt="" class="crop-image">
+            <%}else{%>
+              <img src="<%= property.imageUrl %>" alt="" class="crop-image">
+            <%}%>
+          </a>
+        </div>
+        <div class="col-sm-7 info">
+          <a href="/properties/<%= property._id %>">
+            <p><strong>Price/pw: £<%= property.ppw %><strong></p>
+          </a>
+            <p><%= property.address %></p>
+            <a href="/properties/<%= property._id %>">
+              <p>
+                <% if (property.bedrooms < 1) { %>
+                  Studio to rent
+                <%} else{%>
+                <%= property.bedrooms %> bed property to rent
+                <% } %>
+              </p>
+            </a>
+            <p><%= (property.description).substring(0, 350)+'...' %></p>
+        </div>
+      </div>
+
     <% }); %>
   </ul>
 </div>

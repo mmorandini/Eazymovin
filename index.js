@@ -12,8 +12,9 @@ const cors            = require('cors');
 const session         = require('express-session');
 const flash           = require('express-flash');
 const User           = require('./models/user');
-
 const databaseURL = 'mongodb://localhost/proxy';
+
+
 mongoose.connect(databaseURL);
 
 app.set('view engine', 'ejs');
@@ -35,7 +36,6 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-
 app.use(flash());
 
 app.use((req, res, next) => {

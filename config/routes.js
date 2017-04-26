@@ -7,8 +7,7 @@ const registrations = require('../controllers/registrations');
 const sessions      = require('../controllers/sessions');
 
 
-//this function allows me to secure certain actions in the app to logged in users.
-//in order to do so just call secureRoute after the verb.
+
 function secureRoute(req, res, next) {
   if(!req.session.userId) {
     return req.session.regenerate(() => {
@@ -25,8 +24,12 @@ router.get('/', (req, res) => res.render('statics/home'));
 
 router.route('/properties')
   .get(properties.index)
-  .post(properties.index);
+  .post(properties.create);
 router.route('/properties/:id').get(properties.show);
+
+
+router.route('/properties/:id/ratings')
+  .post(secureRoute, properties.rate);
 
 router.route('/register')
   .get(registrations.new)
