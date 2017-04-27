@@ -5,7 +5,7 @@
 
 <div id="list-view">
 <div class="clearfix margin-bottom-2rem">
-  <a href="/properties/view-map" class="btn btn-primary pull-right">Show on map</a>
+  <a href="#" class="btn btn-primary pull-right" id="map-view-btn">Show on map</a>
 </div>
 
 <ul class="media-list">
@@ -21,7 +21,8 @@
         </a>
       </div>
       <div class="media-body">
-        <a href="/properties/<%= property._id %>"><h3 class="media-heading">&pound;<%= property.ppw %> <%= property.address %></h3></a>
+        <a href="/properties/<%= property._id %>"><h3 class="media-heading">&pound;<%= property.ppw %><br>
+        <%= property.address %></h3></a>
         <h4><% if (property.bedrooms < 1) { %>
           Studio to rent
         <%} else{%>
@@ -33,10 +34,9 @@
   <% }); %>
 </ul>
 </div>
-<div id="map-view">
+<div id="map-view" class="hide">
   <div class="clearfix margin-bottom-2rem">
-    <a href="/properties/view-map" class="btn btn-primary pull-right">List view</a>
+    <a href="#" class="btn btn-primary pull-right" id="list-view-btn">List view</a>
   </div>
-
   <div id="map"></div>
 </div>

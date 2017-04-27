@@ -2,19 +2,22 @@
 
 <% if (locals.message) { %>
   <p class="white-text"><%= message %></p>
-<% } %>
+  <% } %>
 
-<div class="form-wrap row white-text">
-  <form method="POST" action="/login">
-    <div class="">
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email">
-    </div>
-    <div class="">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password">
-    </div>
-
-    <button class="">Login</button>
-  </form>
-</div>
+  <div class="jumbotron clearfix">
+    <form class="form-horizontal" method="POST" action="/login">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon" for="email">Email</div>
+          <input type="text" name="email" id="email" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon" for="password">Password</div>
+          <input type="password" name="password" id="password" class="form-control">
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg pull-right">Login</button>
+    </form>
+  </div>

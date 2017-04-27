@@ -1,36 +1,52 @@
 <div class="jumbotron clearfix">
   <h1 class="text-center">Find your next home</h1>
+
   <form class="form-horizontal" action="/properties" method="post">
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon">Search</div>
-        <input type="text" name="postcode" id="postcode" class="form-control" placeholder="e.g. Westminster or SW9">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">Search</div>
+              <input type="text" name="postcode" id="postcode" class="form-control" placeholder="e.g. Westminster or SW9">
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon">&pound;</div>
-        <input type="text" name="min_price" id="min-price" class="form-control" placeholder="What's your min price yo?">
-        <div class="input-group-addon">Min</div>
+
+      <div class="row">
+        <div class="col-md-4" style="margin-right: 30px;">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">&pound;</div>
+              <input type="text" name="min_price" id="min-price" class="form-control" placeholder="What's your min price yo?">
+              <div class="input-group-addon">Min</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" >
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">&pound;</div>
+              <input type="text" name="max_price" id="max-price" class="form-control" placeholder="How baller are you?">
+              <div class="input-group-addon">Max</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2  pull-right">
+          <div class="form-group">
+            <select name="bedrooms" id="bedrooms" class="form-control">
+              <option value="0">0 Bedrooms</option>
+              <option value="1+">1+ Bedroom</option>
+              <option value="2+">2+ Bedrooms</option>
+              <option value="3+">3+ Bedrooms</option>
+              <option value="4+">4+ Bedrooms</option>
+              <option value="5+">5+ Bedrooms</option>
+            </select>
+          </div>
+        </div>
       </div>
+      <button id="search" class="btn btn-primary btn-lg pull-right">Search</button>
     </div>
-    <div class="form-group">
-      <div class="input-group">
-        <div class="input-group-addon">&pound;</div>
-        <input type="text" name="max_price" id="max-price" class="form-control" placeholder="How baller are you?">
-        <div class="input-group-addon">Max</div>
-      </div>
-    </div>
-    <div class="form-group">
-      <select name="bedrooms" id="bedrooms" class="form-control">
-        <option value="0">0 Bedrooms</option>
-        <option value="1+">1+ Bedroom</option>
-        <option value="2+">2+ Bedrooms</option>
-        <option value="3+">3+ Bedrooms</option>
-        <option value="4+">4+ Bedrooms</option>
-        <option value="5+">5+ Bedrooms</option>
-      </select>
-    </div>
-    <button id="search" class="btn btn-primary btn-lg pull-right">Search</button>
   </form>
 </div>
