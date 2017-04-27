@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class="media-body">
-        <a href="/properties/<%= property._id %>"><h3 class="media-heading">&pound;<%= property.ppw %><br>
+        <a href="/properties/<%= property._id %>"><h3 class="media-heading">&pound;<%= property.ppw %> <small>per week</small><br>
         <%= property.address %></h3></a>
         <h4><% if (property.bedrooms < 1) { %>
           Studio to rent

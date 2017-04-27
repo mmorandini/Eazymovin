@@ -34,7 +34,7 @@ function propertiesCreate(req, res) {
   Property.collection.drop();
 
   var request = {
-    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=50`,
+    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=2`,
     qs: {
       api_key: '98t26raku5vfxj6zvdrtq9rr'
     },
@@ -46,6 +46,7 @@ function propertiesCreate(req, res) {
 
   rp(request)
   .then(function (requestOutput) {
+    console.log(requestOutput)
     return requestOutput.listing.map(property => {
       return{
         address: property.displayable_address,
@@ -54,6 +55,10 @@ function propertiesCreate(req, res) {
         description: property.description,
         imageUrl: property.image_645_430_url,
         postcode: property.outcode,
+        property_type: property.property_type,
+        agent: property.agent_name,
+        agent_logo: property.agent_logo,
+        phone: property.agent_phone,
         coords: {
           lat: property.latitude,
           long: property.longitude
@@ -66,7 +71,7 @@ function propertiesCreate(req, res) {
   })
   .then(properties => {
     console.log(`${properties.length} properties were created!`);
-    console.log(properties[0].coords)
+
     res.render('properties/index', { properties, query: req.body.postcode });
   })
   .catch(err => {

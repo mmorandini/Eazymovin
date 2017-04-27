@@ -7,6 +7,16 @@
     <%}else{%>
         <img class="width-full" src="<%= property.imageUrl %>">
     <%}%>
+    <div class="jumbotron clearfix">
+      <h3>Contact advertiser</h3>
+      <ul class="list-unstyled">
+        <% if(property.agent_logo){%>
+          <img src="<%= property.agent_logo %>" alt="">
+          <%}%>
+        <li>Listed by: <%= property.agent %></li>
+        <li>Phone number: <%= property.phone %></li>
+      </ul>
+    </div>
   </div>
   <div class="col-xs-12 col-md-6 bg-white">
     <% var avg = 0; %>
@@ -16,6 +26,7 @@
 
     <h3>Information</h3>
     <ul class="list-unstyled">
+      <li>Property type: <%= property.property_type %></li>
       <li>Price per week: &pound;<%=property.ppw %></li>
       <li>Average rating: <%= avg %><li>
     </ul>
@@ -44,10 +55,7 @@
       </div>
     </fieldset>
 
-    <h3>Ratings</h3>
-    <% property.ratings.forEach(rating => { %>
-      <p><%= rating.value %> by <%= rating.user %></p>
-    <% }); %>
+
 
     <h3>Description</h3>
     <p><%= property.description %></p>

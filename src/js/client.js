@@ -13,7 +13,6 @@ function initMap() {
   });
   $.get('http://localhost:3000/properties')
   .done(data => {
-
     for (var i = 0; i < data.length; i++) {
       const lat = data[i].coords[0].lat;
       const long = data[i].coords[0].long;

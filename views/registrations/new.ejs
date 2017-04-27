@@ -1,36 +1,52 @@
-<h3>Register</h3>
+
 
 <% if(locals.message) { %>
   <p><%= message %></p>
   <% } %>
-  <div class="jumbotron clearfix">
+  <div class="jumbotron clearfix log">
+    <h3>Register</h3>
     <form method="POST" action="/register" class="form-horizontal">
+      <div class="container">
       <div class="row">
-        <div class="">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name">
+        <div class="form-group">
+          <div class="input-group">
+            <label for="name" class="input-group-addon">Name</label>
+            <input type="text" name="name" id="name" class="form-control">
+          </div>
         </div>
-        <div class="">
-          <label for="surname">Surname</label>
-          <input type="text" name="surname" id="surname">
+        <div class="form-group">
+          <div class="input-group">
+            <label for="surname" class="input-group-addon">Surname</label>
+            <input type="text" name="surname" id="surname" class="form-control">
+          </div>
         </div>
-        <div class="">
-          <label for="city">City</label>
-          <input type="text" name="city" id="city">
+
+        <div class="form-group">
+          <div class="input-group">
+            <div for="city" class="input-group-addon">City</div>
+            <input type="text" name="city" id="city" class="form-control">
+          </div>
         </div>
-        <div class="">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email">
+        <div class="form-group">
+          <div class="input-group">
+            <label for="email" class="input-group-addon">Email</label>
+            <input type="text" name="email" id="email" class="form-control">
+          </div>
         </div>
-        <div class="">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password">
+        <div class="form-group col-sm-6">
+          <div class="input-group">
+            <label for="password" class="">Password</label>
+            <input type="password" name="password" id="password" class="form-control">
+          </div>
         </div>
-        <div class="">
-          <label for="passwordConfirmation">Password Confirmation</label>
-          <input type="password" name="passwordConfirmation" id="passwordConfirmation">
+        <div class="form-group col-sm-6 pull-right">
+          <div class="input-group">
+            <label for="passwordConfirmation" class="">Password Confirmation</label>
+            <input type="password" name="passwordConfirmation" id="passwordConfirmation" class="form-control">
+          </div>
         </div>
       </div>
-      <button class="">Register</button>
+      <div>
+      <button class="btn btn-primary btn-lg pull-right">Register</button>
     </form>
   </div>
