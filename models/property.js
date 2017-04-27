@@ -7,6 +7,10 @@ const propertySchema = new mongoose.Schema({
   description: { type: String },
   imageUrl: { type: String },
   postcode: { type: String },
+  coords: [{
+    lat: { type: Number },
+    long: { type: Number }
+  }],
   ratings: [{
     value: [{ type: Number }],
     user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }

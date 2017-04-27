@@ -8,10 +8,10 @@ function propertiesIndex(req, res) {
   .find()
   .exec()
   .then(properties => {
-    return res.render('properties/index', { properties, query: 'All' });
+    return res.status(200).json(properties);
   })
   .catch(err => {
-    return res.render('error', { error: err });
+    return res.status(500).json({ message: err });
   });
 }
 
@@ -34,7 +34,7 @@ function propertiesCreate(req, res) {
   Property.collection.drop();
 
   var request = {
-    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=50`,
+    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=2`,
     qs: {
       api_key: '98t26raku5vfxj6zvdrtq9rr'
     },
@@ -53,7 +53,11 @@ function propertiesCreate(req, res) {
         ppw: property.rental_prices.per_week,
         description: property.description,
         imageUrl: property.image_645_430_url,
-        postcode: property.outcode
+        postcode: property.outcode,
+        coords: {
+          lat: property.latitude,
+          long: property.longitude
+        }
       };
     });
   })
@@ -62,6 +66,7 @@ function propertiesCreate(req, res) {
   })
   .then(properties => {
     console.log(`${properties.length} properties were created!`);
+    console.log(properties[0].coords)
     res.render('properties/index', { properties, query: req.body.postcode });
   })
   .catch(err => {

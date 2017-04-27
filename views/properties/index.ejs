@@ -1,6 +1,10 @@
 
 <div class="clearfix margin-bottom-2rem">
   <h2 class="pull-left no-margin">Properties to rent in <span id="postcode"><%= query %><span></h2>
+</div>
+
+<div id="list-view">
+<div class="clearfix margin-bottom-2rem">
   <a href="/properties/view-map" class="btn btn-primary pull-right">Show on map</a>
 </div>
 
@@ -28,3 +32,11 @@
     </div>
   <% }); %>
 </ul>
+</div>
+<div id="map-view">
+  <div class="clearfix margin-bottom-2rem">
+    <a href="/properties/view-map" class="btn btn-primary pull-right">List view</a>
+  </div>
+
+  <div id="map"></div>
+</div>
