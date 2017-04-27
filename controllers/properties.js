@@ -8,7 +8,7 @@ function propertiesIndex(req, res) {
   .find()
   .exec()
   .then(properties => {
-    return res.render('properties', { properties });
+    return res.render('properties/index', { properties, query: 'All' });
   })
   .catch(err => {
     return res.render('error', { error: err });
@@ -31,7 +31,6 @@ function propertiesShow(req, res) {
 }
 
 function propertiesCreate(req, res) {
-
   Property.collection.drop();
 
   var request = {
@@ -44,9 +43,9 @@ function propertiesCreate(req, res) {
     },
     json: true
   };
+
   rp(request)
   .then(function (requestOutput) {
-    console.log(requestOutput);
     return requestOutput.listing.map(property => {
       return{
         address: property.displayable_address,
@@ -63,12 +62,11 @@ function propertiesCreate(req, res) {
   })
   .then(properties => {
     console.log(`${properties.length} properties were created!`);
-    res.render('properties/index', { properties });
+    res.render('properties/index', { properties, query: req.body.postcode });
   })
   .catch(err => {
     console.log(`Error: ${err}`);
   });
-
 }
 
 function propertiesRate (req, res, next){
@@ -84,7 +82,7 @@ function propertiesRate (req, res, next){
       console.log(req.body);
       const rating = {
         user: res.locals.user._id,
-        value: req.body.body
+        value: req.body.rate
       };
 
       property.ratings.push(rating);

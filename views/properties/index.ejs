@@ -1,38 +1,30 @@
-<h3>Properties to rent in <span id="postcode"><%= properties[0].postcode %><span></h3>
 
-<div class="container property-container">
-  <a href="/properties/view-map" id="view-btn">Show on map</a>
-  <ul class="row inner-container" style="padding: 20px 0;">
-    <% properties.forEach(property => { %>
-      <hr>
-      <div class="box">
-        <div class="col-sm-5">
-          <a href="/properties/<%= property._id %>">
-          <% if (!property.imageUrl) {%>
-            <img src="../images/default.png" alt="" class="crop-image">
-            <%}else{%>
-              <img src="<%= property.imageUrl %>" alt="" class="crop-image">
-            <%}%>
-          </a>
-        </div>
-        <div class="col-sm-7 info">
-          <a href="/properties/<%= property._id %>">
-            <p><strong>Price/pw: £<%= property.ppw %><strong></p>
-          </a>
-            <p><%= property.address %></p>
-            <a href="/properties/<%= property._id %>">
-              <p>
-                <% if (property.bedrooms < 1) { %>
-                  Studio to rent
-                <%} else{%>
-                <%= property.bedrooms %> bed property to rent
-                <% } %>
-              </p>
-            </a>
-            <p><%= (property.description).substring(0, 350)+'...' %></p>
-        </div>
-      </div>
-
-    <% }); %>
-  </ul>
+<div class="clearfix margin-bottom-2rem">
+  <h2 class="pull-left no-margin">Properties to rent in <span id="postcode"><%= query %><span></h2>
+  <a href="/properties/view-map" class="btn btn-primary pull-right">Show on map</a>
 </div>
+
+<ul class="media-list">
+  <% properties.forEach(property => { %>
+    <div class="media">
+      <div class="media-left media-middle">
+        <a href="/properties/<%= property._id %>">
+          <% if (!property.imageUrl) {%>
+            <img class="property-image" src="../images/default.png">
+          <%}else{%>
+            <img class="property-image" src="<%= property.imageUrl %>">
+          <%}%>
+        </a>
+      </div>
+      <div class="media-body">
+        <a href="/properties/<%= property._id %>"><h3 class="media-heading">&pound;<%= property.ppw %> <%= property.address %></h3></a>
+        <h4><% if (property.bedrooms < 1) { %>
+          Studio to rent
+        <%} else{%>
+          <%= property.bedrooms %> bed property to rent
+        <% } %></h4>
+        <p><%= (property.description).substring(0, 350)+'...' %></p>
+      </div>
+    </div>
+  <% }); %>
+</ul>

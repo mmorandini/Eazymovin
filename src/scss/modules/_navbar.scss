@@ -1,0 +1,40 @@
+.navbar-default {
+  background: $blue;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  line-height: $navbar-height;
+  height: $navbar-height;
+  display: inline;
+  font-size: 1.6rem;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+  line-height: $navbar-height;
+  height: $navbar-height;
+}
+
+.navbar-brand {
+  line-height: $navbar-height;
+  height: $navbar-height;
+  padding: 18px;
+  width: inherit;
+}
+
+.navbar-toggle {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  border: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
