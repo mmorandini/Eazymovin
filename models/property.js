@@ -6,6 +6,7 @@ const propertySchema = new mongoose.Schema({
   ppw: { type: String },
   description: { type: String },
   imageUrl: { type: String },
+  postcode: { type: String },
   ratings: [{
     value: [{ type: Number }],
     user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }

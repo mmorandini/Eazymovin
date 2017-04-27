@@ -35,7 +35,7 @@ function propertiesCreate(req, res) {
   Property.collection.drop();
 
   var request = {
-    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=20`,
+    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=50`,
     qs: {
       api_key: '98t26raku5vfxj6zvdrtq9rr'
     },
@@ -46,13 +46,15 @@ function propertiesCreate(req, res) {
   };
   rp(request)
   .then(function (requestOutput) {
+    console.log(requestOutput);
     return requestOutput.listing.map(property => {
       return{
         address: property.displayable_address,
         bedrooms: property.num_bedrooms,
         ppw: property.rental_prices.per_week,
         description: property.description,
-        imageUrl: property.image_645_430_url
+        imageUrl: property.image_645_430_url,
+        postcode: property.outcode
       };
     });
   })
