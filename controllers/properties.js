@@ -34,7 +34,7 @@ function propertiesCreate(req, res) {
   Property.collection.drop();
 
   var request = {
-    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=2`,
+    uri: `http://api.zoopla.co.uk/api/v1/property_listings.json?area=${req.body.postcode}&listing_status=rent&minimum_price=${req.body.min_price}&maximum_price=${req.body.max_price}&page_size=50`,
     qs: {
       api_key: '98t26raku5vfxj6zvdrtq9rr'
     },
