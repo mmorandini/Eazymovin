@@ -8,7 +8,7 @@ body {
     padding: 10px;
     padding-bottom: 30px;
     min-height: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 
     }
     main:after{
@@ -47,8 +47,22 @@ body {
 .hide {
   display: none;
 }
+.pull-right-lg{
+  float: right;
+}
+@media screen and (max-width: 900px){
+  .pull-right-lg{
+    float: none !important;
+  }
+}
 @media screen and (max-width: 480px){
   #myCarousel{
     display: none;
   }
-}
+  .jumbotron{
+    margin: 0px !important;
+    width: 100% !important;
+    padding: 20px !important;
+    }
+
+  }
