@@ -1,7 +1,8 @@
 {
-  "name": "node-test",
+  "name": "easymovin",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Matteo Morandini <emmemorandini@gmail.com>",
   "license": "MIT",
   "scripts": {
     "postinstall": "gulp deploy"
@@ -41,7 +42,7 @@
     "node-sass": "^3.4.2"
   },
   "engines": {
-    "node": ">=0.12.4",
+    "node": ">=6.x",
     "npm": ">=1.3.14"
   }
 }

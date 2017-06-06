@@ -12,8 +12,8 @@ const propertySchema = new mongoose.Schema({
   agent_logo: { type: String },
   phone: { type: String },
   coords: [{
-    lat: { type: Number },
-    long: { type: Number }
+    lat: { type: Number, required: true},
+    long: { type: Number, required: true }
   }],
   ratings: [{
     value: [{ type: Number }],

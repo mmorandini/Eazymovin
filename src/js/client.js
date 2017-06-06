@@ -13,7 +13,10 @@ function initMap() {
   });
   $.get('http://localhost:3000/properties')
   .done(data => {
+    console.log('data.length', data.length);
     for (var i = 0; i < data.length; i++) {
+      console.log(data[i].coords, i);
+
       const lat = data[i].coords[0].lat;
       const long = data[i].coords[0].long;
       const marker = new google.maps.Marker({
@@ -21,6 +24,7 @@ function initMap() {
         map: map
       });
     }
+    
   });
 }
 
