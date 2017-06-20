@@ -11,11 +11,11 @@ const app             = express();
 const cors            = require('cors');
 const session         = require('express-session');
 const flash           = require('express-flash');
-const User           = require('./models/user');
-const databaseURL = 'mongodb://localhost/proxy';
+const User            = require('./models/user');
+const databaseURL     = 'mongodb://localhost/proxy';
+const env             = require('./config/env') 
 
-
-mongoose.connect(databaseURL);
+mongoose.connect(env.db);
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
