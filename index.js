@@ -60,4 +60,4 @@ app.use((req, res, next) => {
 
 app.use(router);
 
-app.listen(process.env.PORT || 3000, () => console.log(`Server up and running on port: ${env.port}.`));
+app.listen(env.port, () => console.log(`Server up and running on port: ${env.port}.`));
