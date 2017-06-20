@@ -4,8 +4,6 @@ const bodyParser      = require('body-parser');
 const mongoose        = require('mongoose');
 const methodOverride  = require('method-override');
 mongoose.Promise      = require('bluebird');
-
-const port            = process.env.PORT || 3000;
 const router          = require('./config/routes');
 const app             = express();
 const cors            = require('cors');
@@ -62,6 +60,4 @@ app.use((req, res, next) => {
 
 app.use(router);
 
-app.listen(port, () =>{
-  console.log("Express is running on port: ", port );
-});
+app.listen(env.port, () => console.log(`Server up and running on port: ${env.port}.`));
