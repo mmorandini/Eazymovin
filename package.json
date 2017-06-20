@@ -37,9 +37,6 @@
     "history": "1.x",
     "node-sass": "^3.4.2"
   },
-  "peerDependencies": {
-    
-  },
   "engines": {
     "node": "6.x",
     "npm": ">=1.3.14"
