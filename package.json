@@ -36,8 +36,5 @@
     "gulp-uglify": "^2.1.2",
     "history": "1.x",
     "node-sass": "^3.4.2"
-  },
-  "engines": {
-    "npm": "4.1.2"
   }
 }
