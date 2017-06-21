@@ -12,7 +12,7 @@ function initMap() {
     center: ga
   });
   $
-  .get('https://localhost:3000/properties')
+  .get('https://localhost:3000/properties'|| 'https://serene-journey-60392.herokuapp.com/properties')
   .done(data => {
     console.log('data.length', data.length);
     for (var i = 0; i < data.length; i++) {
