@@ -25,8 +25,9 @@ router.get('/', (req, res) => res.render('statics/home'));
 router.route('/properties')
   .get(properties.index)
   .post(properties.create);
-router.route('/properties/:id').get(properties.show);
 
+router.route('/properties/:id')
+  .get(properties.show);
 
 router.route('/properties/:id/ratings')
   .post(secureRoute, properties.rate);

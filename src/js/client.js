@@ -11,7 +11,8 @@ function initMap() {
     zoom: 12,
     center: ga
   });
-  $.get('http://localhost:3000/properties')
+  $
+  .get(`${process.env.MONGODB_URI}/properties` || 'mongodb://localhost/wdi-project-2/properties')
   .done(data => {
     console.log('data.length', data.length);
     for (var i = 0; i < data.length; i++) {

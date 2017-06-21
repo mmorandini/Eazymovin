@@ -2,8 +2,8 @@ const mongoose   = require('mongoose');
 mongoose.Promise = require('bluebird');
 const rp         = require('request-promise');
 
-const databaseURL = 'mongodb://localhost/proxy';
-mongoose.connect(databaseURL);
+// const databaseURL = 'mongodb://localhost/proxy';
+// mongoose.connect(databaseURL);
 
 const Property = require('../models/property');
 const User     = require('../models/user');
