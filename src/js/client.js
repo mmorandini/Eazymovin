@@ -12,7 +12,7 @@ function initMap() {
     center: ga
   });
   $
-  .get('http://localhost:3000/properties')
+  .get('https://localhost:3000/properties')
   .done(data => {
     console.log('data.length', data.length);
     for (var i = 0; i < data.length; i++) {
