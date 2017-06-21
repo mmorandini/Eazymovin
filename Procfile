@@ -1,5 +1,4 @@
-/*
- web: ./node_modules/.bin/forever -m 5 index.js
-*/
 
-web: bundle exec thin start -p $PORT
+ web: ./node_modules/.bin/forever -m 5 index.js
+
+

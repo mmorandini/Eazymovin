@@ -11,7 +11,8 @@ const session         = require('express-session');
 const flash           = require('express-flash');
 const User            = require('./models/user');
 const databaseURL     = 'mongodb://localhost/proxy';
-const env             = require('./config/env') 
+const env             = require('./config/env'); 
+
 
 mongoose.connect(env.db);
 
@@ -60,4 +61,4 @@ app.use((req, res, next) => {
 
 app.use(router);
 
-app.listen(env.port, () => console.log(`Server up and running on port: ${env.port}.`));
+app.listen(port, () => console.log(`Server up and running on port: ${env.port}.`));
