@@ -121,6 +121,12 @@ function propertiesRate (req, res, next){
 
 For the styling I've used Bootstrap 3 because I wanted something clean and professional looking and I still haven't found anything better of Bootstrap for this purposes, even though I'm not a great fan of the rigidity of its patterns.
 
+<img src="https://raw.githubusercontent.com/mmorandini/wdi-project-2/master/src/images/property-index.png">
+<small>Property index page</small>
+
+<img src="https://raw.githubusercontent.com/mmorandini/wdi-project-2/master/src/images/property-show.png">
+<small>Property show page</small>
+
 <h2>Technologies</h2>
 
  - ES6 Javascript
@@ -134,5 +140,5 @@ For the styling I've used Bootstrap 3 because I wanted something clean and profe
  - Mongodb
  - Mongoose
  - Request-promise
- - 
+ - Gulp
  
