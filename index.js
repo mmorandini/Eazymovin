@@ -12,7 +12,7 @@ const flash           = require('express-flash');
 const User            = require('./models/user');
 const databaseURL     = 'mongodb://localhost/proxy';
 const env             = require('./config/env'); 
-const port            = require(env.port);
+const port            = process.env.PORT || 3000;
 
 mongoose.connect(env.db);
 
