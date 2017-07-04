@@ -8,7 +8,7 @@ Web developmet course at GA London. </p>
 
 <p>The idea came from the fact the I have always found the home searching process quite hard, especially because most of the flats I viewed turned out to be much worse than they seemed to be on the adverts.</p>
 
-<p>I therefore thought that adding a rating system to process would have saved a lot of time to home-searchers</p>
+<p>I therefore thought that adding a rating system to the process would have saved a lot of time to home-searchers</p>
 
 <p>The app is built using Embedded Javascript for the front-end and Node.js for the back-end, and relies on the Zoopla.com API for the actual property search.</p>
 
@@ -129,11 +129,11 @@ For the styling I've used Bootstrap 3 because I wanted something clean and profe
 
 <h2>Technologies</h2>
 
- - ES6 Javascript
+ - JavaScript
  - jQuery
  - CSS3
  - HTML5
- - Embedded javascript
+ - Embedded JavaScript
  - Bootstrap 3
  - Node.js
  - Express
